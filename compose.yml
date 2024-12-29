@@ -1,0 +1,13 @@
+services:
+  app:
+    image: node:18
+    working_dir: /usr/src/app
+    tty: true
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/usr/src/app
+    command: >
+      bash -c "npm install &&
+      npm install nodemon -g &&
+      npm run start"

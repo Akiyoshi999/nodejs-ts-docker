@@ -1,13 +1,17 @@
 services:
   app:
-    image: node:18
+    # image: node:18
+    image: test:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+      # context: ./Dockerfiles
+      # dockerfile: Dockerfile.backend
     working_dir: /usr/src/app
     tty: true
+
     ports:
       - "3000:3000"
     volumes:
       - ./:/usr/src/app
-    command: >
-      bash -c "npm install &&
-      npm install nodemon -g &&
-      npm run start"
+    # command: npm run start

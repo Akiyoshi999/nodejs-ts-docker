@@ -4,7 +4,7 @@ services:
     image: test:latest
     build:
       context: .
-      dockerfile: Dockerfile.backend
+      # dockerfile: Dockerfile.backend
       # context: ./Dockerfiles
       # dockerfile: Dockerfile.backend
     working_dir: /usr/src/app

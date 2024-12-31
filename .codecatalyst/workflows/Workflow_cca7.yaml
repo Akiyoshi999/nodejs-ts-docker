@@ -33,3 +33,21 @@ Actions:
         Image: CodeCatalystLinux_x86_64:2024_03
     Compute:
       Type: EC2
+  PushToAmazonECR_62:
+    # Identifies the action. Do not modify this value.
+    Identifier: codecatalyst-labs/push-to-ecr@v1.1.0
+    # Required; You can use an environment to access AWS resources.
+    Environment:
+      Name: dev
+    # Specifies the source and/or artifacts to pass to the action as input.
+    Inputs:
+      # Optional
+      Sources:
+        - WorkflowSource # This specifies that the action requires this Workflow as a source
+    Compute:
+      Type: EC2 # Defines the action's properties.
+    Configuration:
+      RepositoryName: cdk-express
+      AWSRegion: ap-northeast-1
+      PublicRepository: false
+      ImageScanningConfiguration: false
